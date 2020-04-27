@@ -3,7 +3,9 @@
   import_playbook: ansible_version.yml
 
 - hosts: all
-  gather_facts: false
+  gather_facts: true
+  roles:
+    - { role: kubespray-defaults }
   tasks:
     - name: "Set up proxy environment"
       set_fact:
